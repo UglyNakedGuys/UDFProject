@@ -36,8 +36,13 @@ SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit").Set
 Wait 0.5
 Dim txRole
 txRole=Datatable("Role","AddUser")
+SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
 If txRole="系统管理员" Then
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
+	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,122
+	Wait 2
+Else
+	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,143
+	Wait 2
 End If 
 Wait 0.5
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_2").Set Datatable("LoginName","AddUser")
@@ -46,22 +51,24 @@ SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_3").S
 Wait 1
 
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("保存(S)").Click 
-'添加成功操作
+'点击提示框操作
 If SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("提示信息").Exist(1) Then
 	Wait 1
 	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("提示信息").SwfObject("OK").Click
-	WriteLogs("操作员"& Datatable("Name","AddUser") &"添加成功！")
 '判断是否为添加失败操作
 	If SwfWindow("操作员管理").SwfWindow("操作员编辑").Exist(1) Then
 		WriteLogs("添加操作失败，数据库中已存在"&Datatable("Name","AddUser")&"该用户！")
 		Wait 1
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").Close()
+	Else
+		WriteLogs("操作员"& Datatable("Name","AddUser") &"添加成功！")
 	End If
 End If
 
 WriteLogs("添加数据迭代第"& Datatable.GetSheet("AddUser").GetParameter("Num").ValueByRow(1) &"次完毕")
 WriteLogs("-------------------------------------------------------")
-
+'检查添加操作时间
+Wait 10
 WriteLogs("模块体：编辑操作迭代！")
 Wait 1
 Dim Name
@@ -79,9 +86,10 @@ For Iterator = 0 To SwfWindow("操作员管理").SwfTable("gridControlOperator")
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit").Set Datatable("EditName","AddUser")
 		Wait 0.5
 		txRole=Datatable("EditRole","AddUser")
-		If txRole="收费员" Then
-			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
-			WriteLogs("选择框选择数据操作!")
+		If txRole="系统管理员" Then
+			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,122
+		Else
+			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,143
 		End If 
 		Wait 0.5
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_2").Set Datatable("EditLoginName","AddUser")
@@ -89,14 +97,17 @@ For Iterator = 0 To SwfWindow("操作员管理").SwfTable("gridControlOperator")
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_3").Set Datatable("EditLoginPwd","AddUser")
 		Wait 1
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("保存(S)").Click 
+'点击提示框操作
 		If SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("提示信息").Exist(1) Then
 			Wait 1
 			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("提示信息").SwfObject("OK").Click
-			WriteLogs("操作员"& Datatable("EditName","AddUser") &"编辑成功！")
+'判断是否为编辑失败操作 
 			If SwfWindow("操作员管理").SwfWindow("操作员编辑").Exist(1) Then
 				WriteLogs("编辑操作失败"&"用户"&Datatable("Name","AddUser"))
 				Wait 1
 				SwfWindow("操作员管理").SwfWindow("操作员编辑").Close()
+			Else
+				WriteLogs("操作员"& Datatable("EditName","AddUser") &"编辑成功！")
 			End If
 		End If
 	Else
