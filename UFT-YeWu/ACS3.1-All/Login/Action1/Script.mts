@@ -31,3 +31,12 @@ Else
 	WriteLogs("用户"&Datatable("Name","Action1")&"登录失败，错误信息：未知（用户被屏蔽或者拦截等）！")
 End If
 WriteLogs("-------------------------------------------------------")
+SystemUtil.CloseProcessByName("PakingVideo_Login.exe")
+SwfWindow("操作员管理").Activate
+SwfWindow("操作员管理").SwfWindow("操作员编辑").Activate
+SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").Activate
+SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").Activate
+SwfWindow("操作员管理").Activate
+
+
+

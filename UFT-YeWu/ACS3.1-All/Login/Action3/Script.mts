@@ -1,4 +1,9 @@
-﻿'初始化关闭
+﻿SwfWindow("视频识别出入口管理系统").SwfObject("实时监控").Click
+Wait 1
+SwfWindow("视频识别出入口管理系统").SwfObject("btnMenu1").Click
+Wait 5
+
+'初始化关闭
 'SystemUtil.CloseProcessByName("iexplore.exe")
 
 '启动浏览器方式1
@@ -26,5 +31,8 @@ Wait 1
 Browser("登录").Page("登录").WebCheckBox("WebCheckBox").Click
 Wait 1
 Browser("登录").Page("登录").Link("Link").Click
-Msgbox "进场成功"
-
+Wait 1
+SwfWindow("视频识别出入口管理系统").SwfObject("实时监控").Click
+SwfWindow("视频识别出入口管理系统").SwfObject("btnMenu1").Click
+WriteLogs(SwfWindow("实时监控界面").SwfTable("gridControl1").GetCellData(0,2)&"进场")
+SwfWindow("实时监控界面").SwfObject("查询").Click

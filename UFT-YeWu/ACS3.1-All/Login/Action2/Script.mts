@@ -13,8 +13,8 @@ WriteLogs("启动程序")
 
 '登录操作
 Wait 2
-SwfWindow("登录界面").SwfEdit("SwfEdit").Set "lfzdh"
-SwfWindow("登录界面").SwfEdit("SwfEdit_2").Set "lfzdh"
+SwfWindow("登录界面").SwfEdit("SwfEdit").Set "admin"
+SwfWindow("登录界面").SwfEdit("SwfEdit_2").Set "admin"
 SwfWindow("登录界面").SwfObject("登录").Click
 
 '操作员管理操作
@@ -34,15 +34,19 @@ WriteLogs("添加数据迭代开始！")
 '对象赋值
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit").Set Datatable("Name","AddUser")
 Wait 0.5
+SwfWindow("操作员管理").SwfWindow("操作员编辑").Activate
+SwfWindow("操作员管理").Activate
+
 Dim txRole
 txRole=Datatable("Role","AddUser")
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
+Wait 1
 If txRole="系统管理员" Then
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,122
-	Wait 2
+	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 110,10
+	'SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 110,10
 Else
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,143
-	Wait 2
+	'SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 110,27
+	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 110,27
 End If 
 Wait 0.5
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_2").Set Datatable("LoginName","AddUser")
@@ -68,7 +72,7 @@ End If
 WriteLogs("添加数据迭代第"& Datatable.GetSheet("AddUser").GetParameter("Num").ValueByRow(1) &"次完毕")
 WriteLogs("-------------------------------------------------------")
 '检查添加操作时间
-Wait 10
+Wait 3
 WriteLogs("模块体：编辑操作迭代！")
 Wait 1
 Dim Name
@@ -86,10 +90,13 @@ For Iterator = 0 To SwfWindow("操作员管理").SwfTable("gridControlOperator")
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit").Set Datatable("EditName","AddUser")
 		Wait 0.5
 		txRole=Datatable("EditRole","AddUser")
+		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
 		If txRole="系统管理员" Then
-			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,122
+			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 110,10
+			'SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 110,10
 		Else
-			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 115,143
+			'SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click 110,27
+			SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 110,27
 		End If 
 		Wait 0.5
 		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_2").Set Datatable("EditLoginName","AddUser")
@@ -118,4 +125,28 @@ WriteLogs("编辑数据迭代第"& Datatable.GetSheet("AddUser").GetParameter("N
 WriteLogs("-------------------------------------------------------")
 '迭代次数参数记录
 Datatable.GetSheet("AddUser").GetParameter("Num").ValueByRow(1)=Datatable.GetSheet("AddUser").GetParameter("Num").ValueByRow(1)+1
+
+
+'删除操作
+For Iterator = 0 To SwfWindow("操作员管理").SwfTable("gridControlOperator").RowCount-1
+	If SwfWindow("操作员管理").SwfTable("gridControlOperator").GetCellData(Iterator,1)=Name Then
+		SwfWindow("操作员管理").SwfTable("gridControlOperator").SelectCell Iterator,1
+		Wait 1
+		SwfWindow("操作员管理").SwfObject("删除(D)").Click 
+		Wait 1
+		If SwfWindow("操作员管理").SwfWindow("确认信息").Exist(1) Then
+			WriteLogs("删除相应操作员，Name为"&Name)
+		      SwfWindow("操作员管理").SwfWindow("确认信息").SwfObject("Yes").Click
+		      If SwfWindow("操作员管理").SwfWindow("提示信息").Exist(1)  Then
+		      	    	WriteLogs("删除成功！")
+		      Else
+		     		WriteLogs("删除失败！")
+		      End If
+              End If
+	End If
+Next
+
 SwfWindow("操作员管理").Close()
+
+
+ @@ hightlight id_;_460468_;_script infofile_;_ZIP::ssf2.xml_;_
