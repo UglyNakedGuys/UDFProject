@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.1.3.0
+Project("") = "BaseProcess", "BaseProcess\Test.tsp", "3AA0F6B1-1BD3-4F3B-9A4E-2E094520436B"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = E:\Jangboer201705\UFT-YeWu\ACS3.0-New\BaseProcess\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		3AA0F6B1-1BD3-4F3B-9A4E-2E094520436B.Debug|Any CPU.Build.0 = Debug|Any CPU
+		3AA0F6B1-1BD3-4F3B-9A4E-2E094520436B.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		3AA0F6B1-1BD3-4F3B-9A4E-2E094520436B.Release|Any CPU.Build.0 = Release|Any CPU
+		3AA0F6B1-1BD3-4F3B-9A4E-2E094520436B.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
