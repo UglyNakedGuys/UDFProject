@@ -1,0 +1,14 @@
+'===========================================================================================
+'×Ö·û´®½ØÈ¡º¯Êý
+Public Function GetLocalPos(str)
+	Dim Name,x,y
+	tempArray=Split(str,"/")
+	Name=tempArray(0)
+	tempArray2=Split(tempArray(1),",")
+	x=tempArray2(0)
+	y=tempArray2(1)
+	LocalPosArray=array(Name,x,y)
+	
+	GetLocalPos=LocalPosArray
+End Function
+'===========================================================================================
