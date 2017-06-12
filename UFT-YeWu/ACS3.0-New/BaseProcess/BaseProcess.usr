@@ -16,6 +16,7 @@ Action0=Action0\Script.mts
 通道管理=Action2\Script.mts
 进出口管理=Action3\Script.mts
 相机管理=Action4\Script.mts
+操作员管理=Action5\Script.mts
 
 [VuserProfiles]
 Profiles=Default Profile
@@ -66,3 +67,6 @@ Action3\ObjectRepository.bdb=
 Action4\Script.mts=
 Action4\Resource.mtr=
 Action4\ObjectRepository.bdb=
+Action5\Script.mts=
+Action5\Resource.mtr=
+Action5\ObjectRepository.bdb=

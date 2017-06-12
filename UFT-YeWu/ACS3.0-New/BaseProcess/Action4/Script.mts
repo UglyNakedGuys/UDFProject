@@ -186,7 +186,4 @@ SwfWindow("摄像机管理").Close()
 
 WriteLogs("==================摄像机管理模块结束===================")
 wait 1	
- datatable.Export("E:\Jangboer201705\UFT-YeWu\ACS3.0-New\BaseProcess\Excel\基础流程数据表.xls")
-WriteLogs("数据表导出成功")
-Wait 2
  @@ hightlight id_;_3277248_;_script infofile_;_ZIP::ssf28.xml_;_
