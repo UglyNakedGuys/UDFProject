@@ -1,4 +1,4 @@
-﻿WriteLogs("===================通道管理模块开始====================")
+﻿WriteLogs("==================进出口管理模块开始===================")
 WriteLogs("前置初始化操作！")
 Do While True
 If SwfWindow("视频识别出入口管理系统").Exist(1) Then
@@ -199,12 +199,12 @@ SwfWindow("进出口管理").SwfWindow("确认信息").SwfObject("Yes").Click
 If SwfWindow("进出口管理").SwfWindow("提示信息").Exist(1) Then
 	SwfWindow("进出口管理").SwfWindow("提示信息").SwfObject("OK").Click
 	If Not SwfWindow("进出口管理").SwfWindow("提示信息").Exist(1) Then
-		WriteLogs("删除区域返回====成功！")	
+		WriteLogs("删除进出口返回====成功！")	
 	Else
-		WriteLogs("删除区域返回====失败！")
+		WriteLogs("删除进出口返回====失败！")
 	End If
 Else
-	WriteLogs("删除区域返回====失败！")
+	WriteLogs("删除进出口返回====失败！")
 End If
 
 reporter.ReportEvent micPass,"Delete","修改成功！"
@@ -216,8 +216,4 @@ Wait 2
 SwfWindow("进出口管理").Close()
 
 WriteLogs("==================进出口管理模块结束===================")
-
-datatable.Export("E:\Jangboer201705\UFT-YeWu\ACS3.0-New\BaseProcess\Excel\基础流程数据表.xls")
-WriteLogs("数据表导出成功")
-
 wait 1	
