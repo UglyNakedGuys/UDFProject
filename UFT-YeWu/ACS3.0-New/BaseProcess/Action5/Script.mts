@@ -87,8 +87,8 @@ Wait 1
 Dim tempName
 tempName=Datatable.GetSheet("操作员管理").GetParameter("姓名").ValueByRow(1)
 For Iterator = 0 To SwfWindow("操作员管理").SwfTable("gridControlOperator").RowCount-1
-	If tempName=SwfWindow("操作员管理").SwfTable("gridControlOperator").GetCellData(Iterator,0) Then
-		SwfWindow("操作员管理").SwfTable("gridControlOperator").ActivateCell Iterator,0
+	If tempName=SwfWindow("操作员管理").SwfTable("gridControlOperator").GetCellData(Iterator,1) Then
+		SwfWindow("操作员管理").SwfTable("gridControlOperator").ActivateCell Iterator,1
 	End If
 Next
 Do While True
@@ -158,11 +158,11 @@ Wait 2
 WriteLogs("==================操作员信息删除开始===================")
 '操作员信息删除
 Dim deleteName
-deleteName=Datatable.GetSheet("操作员管理").GetParameter("姓名").ValueByRow(1)
+deleteName=Datatable.GetSheet("操作员管理").GetParameter("修改姓名").ValueByRow(1)
 
 For Iterator = 0 To SwfWindow("操作员管理").SwfTable("gridControlOperator").RowCount-1
-If deleteName=SwfWindow("操作员管理").SwfTable("gridControlOperator").GetCellData(Iterator,0) Then
-	SwfWindow("操作员管理").SwfTable("gridControlOperator").SelectCell Iterator,0
+If deleteName=SwfWindow("操作员管理").SwfTable("gridControlOperator").GetCellData(Iterator,1) Then
+	SwfWindow("操作员管理").SwfTable("gridControlOperator").SelectCell Iterator,1
 	SwfWindow("操作员管理").SwfObject("删除(D)").Click
 End If
 Next
