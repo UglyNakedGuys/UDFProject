@@ -18,12 +18,19 @@ SwfWindow("收费规则管理").SwfObject("rdoChannelType").Click 106,12
 Wait 1
 SwfWindow("收费规则管理").SwfObject("添加(A)").Click
 '======================================================================================================
-'操作员信息添加
+'收费规则信息添加
 WriteLogs("=================收费规则信息添加开始==================") @@ hightlight id_;_2032994_;_script infofile_;_ZIP::ssf4.xml_;_
 Wait 1
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("cmbChargeType").Click
 Wait 1
-SwfWindow("SwfWindow").SwfObject("SwfObject").Click 91,9 @@ hightlight id_;_3868328_;_script infofile_;_ZIP::ssf6.xml_;_
+i=0
+Do While True @@ hightlight id_;_655550_;_script infofile_;_ZIP::ssf55.xml_;_
+	SwfWindow("SwfWindow").SwfObject("SwfObject").Click 91,12
+	i=i+14
+	If SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("cmbChargeType").GetROProperty("Text")="时间收费" Then
+		Exit Do
+	End If
+Loop 
 Wait 1
 Dim RuleName
 RuleName=Datatable.GetSheet("临时收费规则").GetParameter("规则名称").ValueByRow(1)
@@ -99,6 +106,20 @@ SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfEdit("SwfEdit
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfEdit("SwfEdit_8").Type EndTime(2)
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfEdit("SwfEdit_8").Type micRight
 Wait 1
+Dim Sub_Rule
+Sub_Rule=Datatable.GetSheet("临时收费规则").GetParameter("子规则").ValueByRow(1)
+SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfComboBox("cmb_ChargeType").Select Sub_Rule
+'i=0
+'Do While True @@ hightlight id_;_3673498_;_script infofile_;_ZIP::ssf57.xml_;_
+'	SwfWindow("SwfWindow").SwfObject("SwfObject").Click 91,12
+' @@ hightlight id_;_3673498_;_script infofile_;_ZIP::ssf58.xml_;_
+'	i=i+14
+'	If SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("cmbChargeType").GetROProperty("Text")="时间收费" Then
+'		Exit Do
+'	End If
+'Loop 
+Wait 1
+
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("添加").Click 
 Wait 1
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("保存").Click @@ hightlight id_;_1641556_;_script infofile_;_ZIP::ssf20.xml_;_
