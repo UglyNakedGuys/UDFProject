@@ -32,11 +32,5 @@ Else
 End If
 WriteLogs("-------------------------------------------------------")
 SystemUtil.CloseProcessByName("PakingVideo_Login.exe")
-SwfWindow("操作员管理").Activate
-SwfWindow("操作员管理").SwfWindow("操作员编辑").Activate
-SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").Activate
-SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").Activate
-SwfWindow("操作员管理").Activate
-
 
 
