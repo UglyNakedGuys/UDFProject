@@ -17,6 +17,8 @@ Action0=Action0\Script.mts
 进出口管理=Action3\Script.mts
 相机管理=Action4\Script.mts
 操作员管理=Action5\Script.mts
+临时收费规则=Action6\Script.mts
+长期收费规则=Action8\Script.mts
 
 [VuserProfiles]
 Profiles=Default Profile
@@ -70,3 +72,9 @@ Action4\ObjectRepository.bdb=
 Action5\Script.mts=
 Action5\Resource.mtr=
 Action5\ObjectRepository.bdb=
+Action6\Script.mts=
+Action6\Resource.mtr=
+Action6\ObjectRepository.bdb=
+Action8\Script.mts=
+Action8\Resource.mtr=
+Action8\ObjectRepository.bdb=

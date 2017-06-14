@@ -1,11 +1,14 @@
 ﻿WriteLogs("初始化登录操作！")
 SystemUtil.CloseProcessByName("ParkingVideo_Login.exe")
 Wait 1
+Dim Address
+Address=Datatable.GetSheet("Global").GetParameter("Address").ValueByRow(1)
+Address=Address&"\PakingVideo_Login.exe"
 If  SwfWindow("登录界面").Exist(2) Then
  SwfWindow("登录界面").Close
 End If
 wait 1
-systemutil.Run("C:\Users\Administrator\Desktop\仙灵金鹰\岗亭\Debug\PakingVideo_Login.exe")
+systemutil.Run(Address)
 
 '==================================================================================
 '电脑终端注册
