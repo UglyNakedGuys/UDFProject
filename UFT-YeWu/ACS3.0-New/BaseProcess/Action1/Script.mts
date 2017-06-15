@@ -90,13 +90,11 @@ wait 1
 Dim isInternl
 isInternl=datatable.GetSheet("区域管理").GetParameter("是否内场").ValueByRow(1)
 Select Case isInternl
-			Case "是"  
+			Case "是"  			
 			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 111,14
 '关联外场停车场名称
 '			Dim ParkingLot
-'			ParkingLot=Datatable.GetSheet("区域管理").GetParameter("关联停车场").ValueByRow(1)
-
-			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 105,17 @@ hightlight id_;_2295678_;_script infofile_;_ZIP::ssf22.xml_;_
+'			ParkingLot=Datatable.GetSheet("区域管理").GetParameter("关联停车场").ValueByRow(1) @@ hightlight id_;_2295678_;_script infofile_;_ZIP::ssf22.xml_;_
 			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click 131,11 @@ hightlight id_;_4655292_;_script infofile_;_ZIP::ssf23.xml_;_
 			SwfWindow("SwfWindow").SwfObject("SwfObject").Click 175,9
 			wait 1

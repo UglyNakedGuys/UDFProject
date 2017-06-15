@@ -111,7 +111,7 @@ Sub_Rule=Datatable.GetSheet("临时收费规则").GetParameter("子规则").Valu
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfComboBox("cmb_ChargeType").Select Sub_Rule
 'i=0
 'Do While True @@ hightlight id_;_3673498_;_script infofile_;_ZIP::ssf57.xml_;_
-'	SwfWindow("SwfWindow").SwfObject("SwfObject").Click 91,12
+'	SwfWindow("SwfWindow").SwfObject("SwfObject").Click 91,12+i
 ' @@ hightlight id_;_3673498_;_script infofile_;_ZIP::ssf58.xml_;_
 '	i=i+14
 '	If SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("cmbChargeType").GetROProperty("Text")="时间收费" Then

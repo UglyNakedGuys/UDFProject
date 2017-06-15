@@ -21,17 +21,33 @@ WriteLogs("===================通道信息添加开始====================")
 Wait 1 @@ hightlight id_;_656740_;_script infofile_;_ZIP::ssf3.xml_;_
 Dim areaInfo
 areaInfo=Datatable.GetSheet("通道管理").GetParameter("区域信息").ValueByRow(1)
-Dim Name,x,y
-tempStr=GetLocalPos(areaInfo)
-Name=tempStr(0)
-x=tempStr(1)
-y=tempStr(2)
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbParkingLotName").Click @@ hightlight id_;_2098790_;_script infofile_;_ZIP::ssf4.xml_;_
-SwfWindow("SwfWindow").SwfObject("SwfObject").Click x,y @@ hightlight id_;_985206_;_script infofile_;_ZIP::ssf5.xml_;_
-
-
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbParkingLotName").Click 115,14 @@ hightlight id_;_3605860_;_script infofile_;_ZIP::ssf48.xml_;_
-SwfWindow("SwfWindow").SwfObject("SwfObject").Click 62,25 @@ hightlight id_;_1114330_;_script infofile_;_ZIP::ssf49.xml_;_
+'Dim Name,x,y
+'tempStr=GetLocalPos(areaInfo)
+'Name=tempStr(0)
+'x=tempStr(1)
+'y=tempStr(2)
+i=17
+basenum=8 @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
+'==============================================================================================================
+'区域信息--循环读取Combox内容逻辑判断
+Do While True
+	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbParkingLotName").Click
+'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+	If basenum>=103 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
+		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+	Else
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		basenum=basenum+i
+	End If
+'检测是否Text相等
+Wait 1
+'Msgbox SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbMStation").GetROProperty("Text")
+	If SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbParkingLotName").GetROProperty("Text")=areaInfo Then
+		Exit Do
+	End If	
+Loop 
+'================================================================================================================ @@ hightlight id_;_1114330_;_script infofile_;_ZIP::ssf49.xml_;_
 Wait 1
 Dim ChannelName
 ChannelName=Datatable.GetSheet("通道管理").GetParameter("通道名称").ValueByRow(1)
@@ -48,22 +64,66 @@ SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfEdit("S
 Wait 1
 SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("spinOutCount").DblClick 5,5,micLeftBtn
 SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfEdit("SwfEdit_3").Type OutCount
-Wait 1
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbMStation").Click @@ hightlight id_;_920696_;_script infofile_;_ZIP::ssf7.xml_;_
+Wait 1 @@ hightlight id_;_920696_;_script infofile_;_ZIP::ssf7.xml_;_
 Dim computer
 computer=Datatable.GetSheet("通道管理").GetParameter("管理电脑").ValueByRow(1)
-tempStr=GetLocalPos(computer)
-x=tempStr(1)
-y=tempStr(2) @@ hightlight id_;_1378156_;_script infofile_;_ZIP::ssf50.xml_;_
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject").Click x,y @@ hightlight id_;_3606964_;_script infofile_;_ZIP::ssf51.xml_;_
-Wait 1 @@ hightlight id_;_1574544_;_script infofile_;_ZIP::ssf8.xml_;_
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").Click
+'tempStr=GetLocalPos(computer)
+'x=tempStr(1)
+'y=tempStr(2) @@ hightlight id_;_1378156_;_script infofile_;_ZIP::ssf50.xml_;_
+'SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject").Click x,y
+
+i=17
+basenum=8 @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
+'==============================================================================================================
+'管理电脑--循环读取Combox内容逻辑判断
+Do While True
+	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbMStation").Click
+'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+	If basenum>=103 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
+		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+	Else
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		basenum=basenum+i
+	End If
+'检测是否Text相等
+Wait 1
+'Msgbox SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbMStation").GetROProperty("Text")
+	If SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbMStation").GetROProperty("Text")=computer Then
+		Exit Do
+	End If	
+Loop 
+'==============================================================================================================
+Wait 1
 Dim chargingRule
 chargingRule=Datatable.GetSheet("通道管理").GetParameter("收费规则").ValueByRow(1)
-tempStr=GetLocalPos(chargingRule)
-x=tempStr(1)
-y=tempStr(2) @@ hightlight id_;_3475048_;_script infofile_;_ZIP::ssf52.xml_;_
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject").Click x,y @@ hightlight id_;_2296696_;_script infofile_;_ZIP::ssf53.xml_;_
+i=17
+basenum=8
+'tempStr=GetLocalPos(chargingRule)
+'x=tempStr(1)
+'y=tempStr(2) @@ hightlight id_;_3475048_;_script infofile_;_ZIP::ssf52.xml_;_
+'SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject").Click x,y @@ hightlight id_;_2296696_;_script infofile_;_ZIP::ssf53.xml_;_
+
+'=======================================================================================================
+'收费规则--循环读取Combox内容逻辑判断
+Do While True @@ hightlight id_;_985780_;_script infofile_;_ZIP::ssf90.xml_;_
+	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").Click 67,6
+'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+	If basenum>=102 Then @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf83.xml_;_
+		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf85.xml_;_
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+	Else @@ hightlight id_;_1904188_;_script infofile_;_ZIP::ssf112.xml_;_
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		basenum=basenum+i
+	End If
+'检测是否Text相等
+Wait 1
+'Msgbox SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").GetROProperty("Text")
+	If SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").GetROProperty("Text")=chargingRule Then
+		Exit Do
+	End If	
+Loop 
+'========================================================================================================
 Wait 1
 SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("保存").Click @@ hightlight id_;_591048_;_script infofile_;_ZIP::ssf11.xml_;_
 
@@ -109,8 +169,30 @@ ChannelNameEdit=Datatable.GetSheet("通道管理").GetParameter("修改通道名
 
 SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfEdit("SwfEdit").Set ChannelNameEdit
 Wait 1
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").Click 72,7 @@ hightlight id_;_4524666_;_script infofile_;_ZIP::ssf44.xml_;_
-SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 45,44 @@ hightlight id_;_2296040_;_script infofile_;_ZIP::ssf45.xml_;_
+Dim ChargingRuleEdit
+ChargingRuleEdit=Datatable.GetSheet("通道管理").GetParameter("修改收费规则").ValueByRow(1)
+i=17
+basenum=8 @@ hightlight id_;_2296696_;_script infofile_;_ZIP::ssf53.xml_;_
+
+'=======================================================================================================
+'收费规则--循环读取Combox内容逻辑判断
+Do While True @@ hightlight id_;_985780_;_script infofile_;_ZIP::ssf90.xml_;_
+	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").Click 67,6
+'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+	If basenum>=102 Then @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf83.xml_;_
+		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf85.xml_;_
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+	Else @@ hightlight id_;_1904188_;_script infofile_;_ZIP::ssf112.xml_;_
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		basenum=basenum+i
+	End If
+'检测是否Text相等
+Wait 1
+	If SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").GetROProperty("Text")=ChargingRuleEdit Then
+		Exit Do
+	End If	
+Loop 
+'======================================================================================================== @@ hightlight id_;_2296040_;_script infofile_;_ZIP::ssf45.xml_;_
 Wait 1
 SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("保存").Click
 
