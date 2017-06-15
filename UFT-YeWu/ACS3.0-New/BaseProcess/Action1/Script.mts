@@ -24,7 +24,7 @@ If  SwfWindow("电脑终端注册").Exist(2) Then
 	wait 1
 	SwfWindow("电脑终端注册").SwfEdit("SwfEdit").Type CNo
 	wait 1
-	SwfWindow("电脑终端注册").SwfObject("注册").Click @@ hightlight id_;_197996_;_script infofile_;_ZIP::ssf12.xml_;_
+	SwfWindow("电脑终端注册").SwfObject("注册").Click	 @@ hightlight id_;_197996_;_script infofile_;_ZIP::ssf12.xml_;_
 	wait 1
 	SwfWindow("电脑终端注册").SwfWindow("提示信息").SwfObject("OK").Click
 End If
@@ -82,7 +82,7 @@ wait 1
 '区域已停车位数赋值
 Dim stopNum
 SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("spinEditStopCarNumber").DblClick 5,5,micLeftBtn
-SwfWindow("区域管理").SwfWindow("区域设置").SwfEdit("SwfEdit_3").Type  micDel    @@ hightlight id_;_4785274_;_script infofile_;_ZIP::ssf47.xml_;_
+SwfWindow("区域管理").SwfWindow("区域设置").SwfEdit("SwfEdit_3").Type  micDel @@ hightlight id_;_4785274_;_script infofile_;_ZIP::ssf47.xml_;_
 stopNum=datatable.GetSheet("区域管理").GetParameter("已停车位数").ValueByRow(1)
 SwfWindow("区域管理").SwfWindow("区域设置").SwfEdit("SwfEdit_3").Type  stopNum  
 wait 1
@@ -101,12 +101,14 @@ Select Case isInternl
 			Do While True
 				SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click
 			'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
-				If basenum>=103 Then			 @@ hightlight id_;_4066698_;_script infofile_;_ZIP::ssf44.xml_;_
+				If basenum>110 Then @@ hightlight id_;_4066698_;_script infofile_;_ZIP::ssf44.xml_;_
 					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum-i
 				Else
 					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
-					basenum=basenum+i
+					If basenum<=110 Then
+						basenum=basenum+i
+					End If
 				End If
 			'检测是否Text相等
 			Wait 1
@@ -196,12 +198,14 @@ Select Case isInternl
 			Do While True
 				SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click
 			'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
-				If basenum>=103 Then			 @@ hightlight id_;_8917212_;_script infofile_;_ZIP::ssf45.xml_;_
+				If basenum>110 Then @@ hightlight id_;_8917212_;_script infofile_;_ZIP::ssf45.xml_;_
 					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum-i
 				Else
 					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
-					basenum=basenum+i
+					If basenum<=110 Then
+						basenum=basenum+i
+					End If
 				End If
 			'检测是否Text相等
 			Wait 1

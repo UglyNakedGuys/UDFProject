@@ -33,12 +33,14 @@ basenum=8
 Do While True
 	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbParkingLotName").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
-	If basenum>=103 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
+	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
 		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-i
 	Else
 		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
-		basenum=basenum+i
+		If basenum<=110 Then
+			basenum=basenum+i
+		End If
 	End If
 '检测是否Text相等
 Wait 1
@@ -79,12 +81,14 @@ basenum=8 @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
 Do While True
 	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbMStation").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
-	If basenum>=103 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
+	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
 		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-i
 	Else
 		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
-		basenum=basenum+i
+		If basenum<=110 Then
+			basenum=basenum+i
+		End If
 	End If
 '检测是否Text相等
 Wait 1
@@ -109,12 +113,14 @@ basenum=8
 Do While True @@ hightlight id_;_985780_;_script infofile_;_ZIP::ssf90.xml_;_
 	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").Click 67,6
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
-	If basenum>=102 Then @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf83.xml_;_
+	If basenum>110 Then @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf83.xml_;_
 		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf85.xml_;_
-		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-i
 	Else @@ hightlight id_;_1904188_;_script infofile_;_ZIP::ssf112.xml_;_
 		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
-		basenum=basenum+i
+		If basenum<=110 Then
+			basenum=basenum+i
+		End If
 	End If
 '检测是否Text相等
 Wait 1
@@ -156,6 +162,7 @@ tempChannelName=Datatable.GetSheet("通道管理").GetParameter("通道名称").
 For Iterator = 0 To SwfWindow("停车场通道管理").SwfTable("gridControl1").RowCount-1
 	If tempChannelName=SwfWindow("停车场通道管理").SwfTable("gridControl1").GetCellData(Iterator,0) Then
 		SwfWindow("停车场通道管理").SwfTable("gridControl1").ActivateCell Iterator,0
+		Exit for
 	End If
 Next
 Do While True
@@ -179,12 +186,14 @@ basenum=8 @@ hightlight id_;_2296696_;_script infofile_;_ZIP::ssf53.xml_;_
 Do While True @@ hightlight id_;_985780_;_script infofile_;_ZIP::ssf90.xml_;_
 	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbChargeRule").Click 67,6
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
-	If basenum>=102 Then @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf83.xml_;_
+	If basenum>110 Then @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf83.xml_;_
 		SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_1706128_;_script infofile_;_ZIP::ssf85.xml_;_
-		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
+		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-i
 	Else @@ hightlight id_;_1904188_;_script infofile_;_ZIP::ssf112.xml_;_
 		SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
-		basenum=basenum+i
+		If basenum<=110 Then
+			basenum=basenum+i
+		End If
 	End If
 '检测是否Text相等
 Wait 1
@@ -230,6 +239,7 @@ For Iterator = 0 To SwfWindow("停车场通道管理").SwfTable("gridControl1").
 If deleteChannelName=SwfWindow("停车场通道管理").SwfTable("gridControl1").GetCellData(Iterator,0) Then
 	SwfWindow("停车场通道管理").SwfTable("gridControl1").SelectCell Iterator,0
 	SwfWindow("停车场通道管理").SwfObject("删除(D)").Click
+	Exit For
 End If
 Next
 Do While True

@@ -84,6 +84,7 @@ tempCameraName=Datatable.GetSheet("相机管理").GetParameter("摄像机名称"
 For Iterator = 0 To SwfWindow("摄像机管理").SwfTable("gridControl1").RowCount-1
 	If tempCameraName=SwfWindow("摄像机管理").SwfTable("gridControl1").GetCellData(Iterator,0) Then
 		SwfWindow("摄像机管理").SwfTable("gridControl1").ActivateCell Iterator,0
+		Exit For
 	End If
 Next
 Do While True
@@ -129,7 +130,7 @@ If Not SwfWindow("摄像机管理").SwfWindow("修改识别器信息").SwfWindow
 	passFlag=True
 	WriteLogs("摄像机修改返回====成功！")
 Else
-	WriteLogs("摄像机修改返回====失败！")	
+	WriteLogs("摄像机修改返回====失败！")
 End If
 '数据表信息写入
 If passFlag Then

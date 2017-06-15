@@ -147,25 +147,10 @@ Else
 End If
 SwfWindow("收费规则管理").SwfWindow("编辑收费规则").Close()
 '========================================================================================================
- '操作员信息修改
-WriteLogs("=================收费规则信息修改开始==================")
-Wait 1
+ '临时收费规则信息修改
+WriteLogs("================临时收费规则信息修改开始=================")
+wait 1
+Dim tempRuleName
+tempRuleName=Datatable.GetSheet("临时收费规则").GetParameter("规则名称").ValueByRow(1)
 
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfWindow("SwfWindow").SwfObject("OK").Click 40,8 @@ hightlight id_;_2884984_;_script infofile_;_ZIP::ssf21.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").Close
-'SwfWindow("收费规则管理").SwfTable("gridControlChargingRules").SetView "" @@ hightlight id_;_920100_;_script infofile_;_ZIP::ssf22.xml_;_
-'SwfWindow("收费规则管理").SwfTable("gridControlChargingRules").SelectCell 5,"收费规则名称" @@ hightlight id_;_920100_;_script infofile_;_ZIP::ssf23.xml_;_
-'SwfWindow("收费规则管理").SwfObject("编辑").Click 57,9 @@ hightlight id_;_1902792_;_script infofile_;_ZIP::ssf24.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfTable("gridControl1").SetView "" @@ hightlight id_;_1181886_;_script infofile_;_ZIP::ssf25.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfTable("gridControl1").SelectCell 0,"金额" @@ hightlight id_;_1181886_;_script infofile_;_ZIP::ssf26.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfEdit("SwfEdit").SetSelection 0,5 @@ hightlight id_;_1379438_;_script infofile_;_ZIP::ssf27.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").Close
-'SwfWindow("收费规则管理").SwfTable("gridControlChargingRules").SelectCell 5,"收费规则名称" @@ hightlight id_;_920100_;_script infofile_;_ZIP::ssf28.xml_;_
-'SwfWindow("收费规则管理").SwfObject("删除(D)").Click 34,16 @@ hightlight id_;_1574184_;_script infofile_;_ZIP::ssf29.xml_;_
-'SwfWindow("收费规则管理").SwfObject("rdoChannelType").Click 12,16 @@ hightlight id_;_1771352_;_script infofile_;_ZIP::ssf30.xml_;_
-'SwfWindow("收费规则管理").SwfObject("添加(A)").Click 52,11 @@ hightlight id_;_2032994_;_script infofile_;_ZIP::ssf31.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("cmbChargeType").Click 161,9 @@ hightlight id_;_920604_;_script infofile_;_ZIP::ssf32.xml_;_
-'SwfWindow("收费规则管理").SwfTable("gridControlChargingRules").SetFilter "收费规则名称","按期收费" @@ hightlight id_;_920100_;_script infofile_;_ZIP::ssf33.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").SwfObject("cmbChargeRuleType").Click 38,9 @@ hightlight id_;_855064_;_script infofile_;_ZIP::ssf34.xml_;_
-'SwfWindow("收费规则管理").SwfWindow("编辑收费规则").Close
-'SwfWindow("收费规则管理").Close
+ExportExcel()

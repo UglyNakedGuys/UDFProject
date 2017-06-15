@@ -23,15 +23,32 @@ Dim Name
 Name=Datatable.GetSheet("操作员管理").GetParameter("姓名").ValueByRow(1) @@ hightlight id_;_2689152_;_script infofile_;_ZIP::ssf24.xml_;_
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit").Set Name @@ hightlight id_;_3147492_;_script infofile_;_ZIP::ssf25.xml_;_
 Wait 1
-SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click @@ hightlight id_;_5377084_;_script infofile_;_ZIP::ssf39.xml_;_
+ @@ hightlight id_;_5377084_;_script infofile_;_ZIP::ssf39.xml_;_
 Dim Role
 Role=Datatable.GetSheet("操作员管理").GetParameter("所属角色").ValueByRow(1)
-Select Case Role
-Case "系统管理员" @@ hightlight id_;_5377084_;_script infofile_;_ZIP::ssf37.xml_;_
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 47,7 @@ hightlight id_;_5573926_;_script infofile_;_ZIP::ssf38.xml_;_
-Case Else @@ hightlight id_;_5377084_;_script infofile_;_ZIP::ssf35.xml_;_
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 32,24 @@ hightlight id_;_5573926_;_script infofile_;_ZIP::ssf36.xml_;_
-End Select @@ hightlight id_;_1116034_;_script infofile_;_ZIP::ssf26.xml_;_
+i=17
+basenum=8 @@ hightlight id_;_395522_;_script infofile_;_ZIP::ssf58.xml_;_
+'==============================================================================================================
+'所属角色信息--循环读取Combox内容逻辑判断
+Do While True
+	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
+'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+	If basenum>110 Then @@ hightlight id_;_8917212_;_script infofile_;_ZIP::ssf45.xml_;_
+		SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
+		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-i
+	Else
+		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		If basenum<=110 Then
+			basenum=basenum+i
+		End If
+	End If
+'检测是否Text相等
+Wait 1
+	If SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").GetROProperty("Text")=Role Then
+		Exit Do
+	End If	
+Loop 
+'================================================================================================================
 Wait 1 @@ hightlight id_;_6160832_;_script infofile_;_ZIP::ssf34.xml_;_
 Dim loginName
 loginName=Datatable.GetSheet("操作员管理").GetParameter("登录名").ValueByRow(1)
@@ -100,14 +117,30 @@ Wait 1
 Name=Datatable.GetSheet("操作员管理").GetParameter("修改姓名").ValueByRow(1) @@ hightlight id_;_2689152_;_script infofile_;_ZIP::ssf24.xml_;_
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit").Set Name @@ hightlight id_;_3147492_;_script infofile_;_ZIP::ssf25.xml_;_
 Wait 1
-SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
 Role=Datatable.GetSheet("操作员管理").GetParameter("修改所属角色").ValueByRow(1)
-Select Case Role
-Case "系统管理员" @@ hightlight id_;_5377084_;_script infofile_;_ZIP::ssf37.xml_;_
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 47,7 @@ hightlight id_;_5573926_;_script infofile_;_ZIP::ssf38.xml_;_
-Case Else @@ hightlight id_;_5377084_;_script infofile_;_ZIP::ssf35.xml_;_
-	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 32,24 @@ hightlight id_;_5573926_;_script infofile_;_ZIP::ssf36.xml_;_
-End Select @@ hightlight id_;_1116034_;_script infofile_;_ZIP::ssf26.xml_;_
+i=17
+basenum=8 @@ hightlight id_;_395522_;_script infofile_;_ZIP::ssf58.xml_;_
+'==============================================================================================================
+'所属角色信息--循环读取Combox内容逻辑判断
+Do While True
+	SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").Click
+'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+	If basenum>110 Then @@ hightlight id_;_8917212_;_script infofile_;_ZIP::ssf45.xml_;_
+		SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
+		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-i
+	Else
+		SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		If basenum<=110 Then
+			basenum=basenum+i
+		End If
+	End If
+'检测是否Text相等
+Wait 1
+	If SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfObject("cmbRole").GetROProperty("Text")=Role Then
+		Exit Do
+	End If	
+Loop 
+'================================================================================================================ @@ hightlight id_;_1116034_;_script infofile_;_ZIP::ssf26.xml_;_
 Wait 1
 loginName=Datatable.GetSheet("操作员管理").GetParameter("修改登录名").ValueByRow(1)
 SwfWindow("操作员管理").SwfWindow("操作员编辑").SwfEdit("SwfEdit_2").Set loginName @@ hightlight id_;_1510704_;_script infofile_;_ZIP::ssf40.xml_;_
@@ -190,11 +223,9 @@ datatable.LocalSheet.AddParameter "删除结果"," "
 datatable.GetSheet("操作员管理").SetCurrentRow(1)
 datatable.Value("删除结果","操作员管理")="成功"
 WriteLogs("数据表修改成功")
+'===================================================================================================
 Wait 2
 SwfWindow("操作员管理").Close()
 
 WriteLogs("==================操作员管理模块结束===================")
-wait 1	
- datatable.Export("E:\Jangboer201705\UFT-YeWu\ACS3.0-New\BaseProcess\Excel\基础流程数据表.xls")
-WriteLogs("数据表导出成功")
 Wait 2
