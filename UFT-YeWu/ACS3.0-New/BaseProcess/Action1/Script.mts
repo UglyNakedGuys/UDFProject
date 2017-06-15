@@ -82,28 +82,46 @@ wait 1
 '区域已停车位数赋值
 Dim stopNum
 SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("spinEditStopCarNumber").DblClick 5,5,micLeftBtn
-SwfWindow("区域管理").SwfWindow("区域设置").SwfEdit("SwfEdit_3").Type  micDel   
+SwfWindow("区域管理").SwfWindow("区域设置").SwfEdit("SwfEdit_3").Type  micDel    @@ hightlight id_;_4785274_;_script infofile_;_ZIP::ssf47.xml_;_
 stopNum=datatable.GetSheet("区域管理").GetParameter("已停车位数").ValueByRow(1)
 SwfWindow("区域管理").SwfWindow("区域设置").SwfEdit("SwfEdit_3").Type  stopNum  
 wait 1
 '区域是否内场赋值
 Dim isInternl
+Dim outField
 isInternl=datatable.GetSheet("区域管理").GetParameter("是否内场").ValueByRow(1)
+outField=datatable.GetSheet("区域管理").GetParameter("外场信息").ValueByRow(1)
 Select Case isInternl
 			Case "是"  			
-			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 111,14
-'关联外场停车场名称
-'			Dim ParkingLot
-'			ParkingLot=Datatable.GetSheet("区域管理").GetParameter("关联停车场").ValueByRow(1) @@ hightlight id_;_2295678_;_script infofile_;_ZIP::ssf22.xml_;_
-			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click 131,11 @@ hightlight id_;_4655292_;_script infofile_;_ZIP::ssf23.xml_;_
-			SwfWindow("SwfWindow").SwfObject("SwfObject").Click 175,9
+			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 111,14 @@ hightlight id_;_1577452_;_script infofile_;_ZIP::ssf39.xml_;_
+			i=17
+			basenum=8 @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
+			'==============================================================================================================
+			'区域信息--循环读取Combox内容逻辑判断
+			Do While True
+				SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click
+			'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+				If basenum>=103 Then			 @@ hightlight id_;_4066698_;_script infofile_;_ZIP::ssf44.xml_;_
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+				Else
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+					basenum=basenum+i
+				End If
+			'检测是否Text相等
+			Wait 1
+				If SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").GetROProperty("Text")=outField Then
+					Exit Do
+				End If	
+			Loop 
+			'================================================================================================================
 			wait 1
 			Case "否"   SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 13,12
 End Select
 WriteLogs("区域添加参数赋值结束！")
 
 SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("保存").Click
-
+Wait 1
 passFlag=false
 tableRowCount=SwfWindow("区域管理").SwfTable("gridControl1").RowCount
 For i=0 to tableRowCount -1
@@ -169,22 +187,36 @@ wait 1
 '区域是否内场赋值
 isInternl=datatable.GetSheet("区域管理").GetParameter("修改是否内场").ValueByRow(1)
 Select Case isInternl
-			Case "是"  
-			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 111,14
-'关联外场停车场名称
-'			Dim ParkingLot
-'			ParkingLot=Datatable.GetSheet("区域管理").GetParameter("关联停车场").ValueByRow(1)
-
-			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 105,17 @@ hightlight id_;_2295678_;_script infofile_;_ZIP::ssf22.xml_;_
-			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click 131,11 @@ hightlight id_;_4655292_;_script infofile_;_ZIP::ssf23.xml_;_
-			SwfWindow("SwfWindow").SwfObject("SwfObject").Click 175,9
+			Case "是"  			
+			SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 111,14 @@ hightlight id_;_1577452_;_script infofile_;_ZIP::ssf39.xml_;_
+			i=17
+			basenum=8 @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
+			'==============================================================================================================
+			'区域信息--循环读取Combox内容逻辑判断
+			Do While True
+				SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click
+			'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
+				If basenum>=103 Then			 @@ hightlight id_;_8917212_;_script infofile_;_ZIP::ssf45.xml_;_
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+				Else
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+					basenum=basenum+i
+				End If
+			'检测是否Text相等
+			Wait 1
+				If SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").GetROProperty("Text")=outField Then
+					Exit Do
+				End If	
+			Loop 
+			'================================================================================================================
 			wait 1
 			Case "否"   SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("radGpIsInternl").Click 13,12
 End Select
 WriteLogs("区域修改参数赋值结束！")
 
 SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("保存").Click
-
+Wait 1
 passFlag=false
 tableRowCount=SwfWindow("区域管理").SwfTable("gridControl1").RowCount
 For i=0 to tableRowCount -1

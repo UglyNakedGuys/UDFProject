@@ -25,11 +25,11 @@ areaInfo=Datatable.GetSheet("通道管理").GetParameter("区域信息").ValueBy
 'tempStr=GetLocalPos(areaInfo)
 'Name=tempStr(0)
 'x=tempStr(1)
-'y=tempStr(2)
-i=17
-basenum=8 @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
+'y=tempStr(2) @@ hightlight id_;_264064_;_script infofile_;_ZIP::ssf56.xml_;_
 '==============================================================================================================
 '区域信息--循环读取Combox内容逻辑判断
+i=17
+basenum=8
 Do While True
 	SwfWindow("停车场通道管理").SwfWindow("保存停车场通道").SwfObject("cmbParkingLotName").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
