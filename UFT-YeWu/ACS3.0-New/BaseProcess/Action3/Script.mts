@@ -7,7 +7,7 @@ End If
 Loop 
 SwfWindow("视频识别出入口管理系统").SwfObject("设备管理").Click @@ hightlight id_;_198172_;_script infofile_;_ZIP::ssf1.xml_;_
 Wait 1
-SwfWindow("视频识别出入口管理系统").SwfObject("btnMenu3").Click @@ hightlight id_;_591216_;_script infofile_;_ZIP::ssf2.xml_;_
+SwfWindow("视频识别出入口管理系统").SwfObject("btnMenu3").Click @@ hightlight id_;_3999384_;_script infofile_;_ZIP::ssf96.xml_;_
 Do	While True
 If  SwfWindow("进出口管理").Exist(1) Then
 	Exit Do
@@ -29,10 +29,10 @@ Do While True
 	SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfObject("cmbParkingChannelName").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 	Else @@ hightlight id_;_854240_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		If basenum<=110 Then
 			basenum=basenum+i
 		End If
@@ -70,14 +70,13 @@ Do While True
 	SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfObject("cmbMStation").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 	Else
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		If basenum<=110 Then
 			basenum=basenum+i
 		End If
-
 	End If
 '检测是否Text相等
 Wait 1
@@ -98,10 +97,10 @@ Do While True
 	SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfObject("cmbChargeRule").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 	Else
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		If basenum<=110 Then
 			basenum=basenum+i
 		End If
@@ -125,10 +124,10 @@ Do While True
 	SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfObject("cmbCameraList").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 	Else
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		If basenum<=110 Then
 			basenum=basenum+i
 		End If
@@ -164,9 +163,6 @@ Else
 	datatable.Value("添加结果","进出口管理")="失败"
 	WriteLogs("数据表修改成功")
 End If
-
-datatable.Export("E:\Jangboer201705\UFT-YeWu\ACS3.0-New\BaseProcess\Excel\基础流程数据表.xls")
-WriteLogs("数据表导出成功")
 Wait 2
 '====================================================================================================
 '进出口信息修改
@@ -233,11 +229,11 @@ Do While True
 	Wait 1
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 		Wait 1
 	Else
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		Wait 1
 		If basenum<=110 Then
 			basenum=basenum+i
@@ -262,10 +258,10 @@ Do While True
 	SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfObject("cmbChargeRule").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 	Else
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		If basenum<=110 Then
 			basenum=basenum+i
 		End If
@@ -288,10 +284,10 @@ Do While True
 	SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfObject("cmbCameraList").Click
 '判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 	If basenum>110 Then @@ hightlight id_;_2492618_;_script infofile_;_ZIP::ssf80.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum-17
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110 @@ hightlight id_;_2361728_;_script infofile_;_ZIP::ssf81.xml_;_
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-17
 	Else
-		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject").Click 60,basenum
+		SwfWindow("进出口管理").SwfWindow("保存进出口通道信息").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 		If basenum<=110 Then
 			basenum=basenum+i
 		End If

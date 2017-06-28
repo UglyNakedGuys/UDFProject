@@ -24,7 +24,7 @@ If  SwfWindow("电脑终端注册").Exist(2) Then
 	wait 1
 	SwfWindow("电脑终端注册").SwfEdit("SwfEdit").Type CNo
 	wait 1
-	SwfWindow("电脑终端注册").SwfObject("注册").Click	 @@ hightlight id_;_197996_;_script infofile_;_ZIP::ssf12.xml_;_
+	SwfWindow("电脑终端注册").SwfObject("注册").Click @@ hightlight id_;_197996_;_script infofile_;_ZIP::ssf12.xml_;_
 	wait 1
 	SwfWindow("电脑终端注册").SwfWindow("提示信息").SwfObject("OK").Click
 End If
@@ -102,10 +102,10 @@ Select Case isInternl
 				SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click
 			'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 				If basenum>110 Then @@ hightlight id_;_4066698_;_script infofile_;_ZIP::ssf44.xml_;_
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum-i
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-i
 				Else
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 					If basenum<=110 Then
 						basenum=basenum+i
 					End If
@@ -156,12 +156,12 @@ Wait 2
 '=========================================================================================================================
 '区域信息修改
 WriteLogs("===================区域信息修改开始====================")
-
+ @@ hightlight id_;_984930_;_script infofile_;_ZIP::ssf58.xml_;_
 Dim tempLotName
 tempLotName=datatable.GetSheet("区域管理").GetParameter("区域名称").ValueByRow(1)
 For Iterator = 0 To SwfWindow("区域管理").SwfTable("gridControl1").RowCount-1
-If tempLotName=SwfWindow("区域管理").SwfTable("gridControl1").GetCellData(Iterator,0) Then
-	SwfWindow("区域管理").SwfTable("gridControl1").ActivateCell Iterator,0
+If tempLotName=SwfWindow("区域管理").SwfTable("gridControl1").GetCellData(Iterator,"区域名称") Then
+	SwfWindow("区域管理").SwfTable("gridControl1").ActivateCell Iterator,"区域名称"
 End If
 Next
 do While true
@@ -199,10 +199,10 @@ Select Case isInternl
 				SwfWindow("区域管理").SwfWindow("区域设置").SwfObject("cmbParkingLot").Click
 			'判断是否处于边界处 @@ hightlight id_;_1509658_;_script infofile_;_ZIP::ssf79.xml_;_
 				If basenum>110 Then @@ hightlight id_;_8917212_;_script infofile_;_ZIP::ssf45.xml_;_
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 10,110
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum-i
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 10,110
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum-i
 				Else
-					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_3").Click 60,basenum
+					SwfWindow("区域管理").SwfWindow("区域设置").SwfWindow("SwfWindow").SwfObject("SwfObject_2").Click 60,basenum
 					If basenum<=110 Then
 						basenum=basenum+i
 					End If

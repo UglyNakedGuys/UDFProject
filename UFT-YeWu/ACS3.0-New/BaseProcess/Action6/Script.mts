@@ -153,4 +153,5 @@ wait 1
 Dim tempRuleName
 tempRuleName=Datatable.GetSheet("临时收费规则").GetParameter("规则名称").ValueByRow(1)
 
+'数据表导出本地Excel
 ExportExcel()

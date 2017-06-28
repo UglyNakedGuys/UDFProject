@@ -156,6 +156,7 @@ For Iterator = 0 To SwfWindow("摄像机管理").SwfTable("gridControl1").RowCou
 If deleteCameraName=SwfWindow("摄像机管理").SwfTable("gridControl1").GetCellData(Iterator,0) Then
 	SwfWindow("摄像机管理").SwfTable("gridControl1").SelectCell Iterator,0
 	SwfWindow("摄像机管理").SwfObject("删除(D)").Click
+	Exit For
 End If
 Next
 Do While True
@@ -186,5 +187,5 @@ Wait 2
 SwfWindow("摄像机管理").Close()
 
 WriteLogs("==================摄像机管理模块结束===================")
-wait 1	
+wait 1
  @@ hightlight id_;_3277248_;_script infofile_;_ZIP::ssf28.xml_;_
